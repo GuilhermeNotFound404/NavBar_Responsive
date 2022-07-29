@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+nav {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, helvetica, arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+}
+
+main {
+    background: url("bd.jpg") no-repeat
+    center center ;
+    background-size: cover;
+    height: 92vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 30px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor:pointer;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x:hidden;
+    }
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+    .mobile-menu.active .line1 {
+     transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    
+    .mobile-menu.active .line2 {
+       opacity: 0;
+        
+    }
+    
+    .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+    }
+   
+    .footer {
+        position: fixed;
+        width: 100%;
+        height: 40px;
+        bottom: 0;
+        background-color: rgba(9, 9, 9, 0.659);
+    }
+    
+    .description {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 16px;
+        color: #999;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    .description i {
+        color: rgb(238, 223, 7);
+        font-size: 25px;
+        margin: 0 4px 6px 4px;
+    }
+    
+    .description a {
+        text-decoration: none;
+        color: rgb(0, 105, 128);
+    }
